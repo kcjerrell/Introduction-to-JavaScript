@@ -304,20 +304,8 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(text) {
-  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-
-  let n = 0;
-
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (vowels.includes(c))
-      n += 1;
-  }
-
-  return n;
+  return text.replace(/[^aeiou]/gi, '').length;
 }
-
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo() {
