@@ -161,41 +161,57 @@ Use the game function below to do the following:
 */
 
 const rpsMoves = ["rock", "paper", "scissors"];
+const rpsWin = { "rock": "scissors", "paper": "rock", "scissors": "paper" };
 
 function game(user, computer) {
-  if (!rpsMoves.includes(user) || !rpsMoves.includes(computer))
+   if (!rpsMoves.includes(user) || !rpsMoves.includes(computer))
     return "srsly learn 2 play";
 
-  const userN = rpsMoves.indexOf(user);
-  const compN = rpsMoves.indexOf(computer);
-
-  console.log(`${user} (${userN}) vs ${computer} (${compN})`);
-
-  let result = "";
-
-  if (userN === compN)
-    result = "it's a tie";
-
-  else if (userN > compN) {
-    if (compN === 0 && userN === 2)
-      result = "you lose!";
-    else
-      result = "you win!";
-  }
-
-  else if (userN <= compN) {
-    if (userN === 0 && compN === 2)
-      result = "you win!";
-    else
-      result = "you lose!";
-  }
-
-  console.log(`${result}`);
-  return result;
+  if (user === computer)
+    return "it's a tie";
+  else if (rpsWin[user] === computer)
+    return "you win!";
+  else
+    return "you lose!";
 }
 
 const rand = Math.floor(Math.random() * 3);
 let computerChoice = rpsMoves[rand];
+
+// const rpsMoves = ["rock", "paper", "scissors"];
+
+// function game(user, computer) {
+//   if (!rpsMoves.includes(user) || !rpsMoves.includes(computer))
+//     return "srsly learn 2 play";
+
+//   const userN = rpsMoves.indexOf(user);
+//   const compN = rpsMoves.indexOf(computer);
+
+//   console.log(`${user} (${userN}) vs ${computer} (${compN})`);
+
+//   let result = "";
+
+//   if (userN === compN)
+//     result = "it's a tie";
+
+//   else if (userN > compN) {
+//     if (compN === 0 && userN === 2)
+//       result = "you lose!";
+//     else
+//       result = "you win!";
+//   }
+
+//   else if (userN <= compN) {
+//     if (userN === 0 && compN === 2)
+//       result = "you win!";
+//     else
+//       result = "you lose!";
+//   }
+
+//   console.log(`${result}`);
+//   return result;
+// }
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
